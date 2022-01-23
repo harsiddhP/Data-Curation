@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<!DOCTYPE assignementInformation [
+<!ELEMENT assignementInformation (title,body)>
+<!ELEMENT instructions (step1,step2,step3,step4,step5,step6,step7,step8,step9)>
+<!ELEMENT step1 (description)>
+<!ELEMENT step2 (description)>
+<!ELEMENT step3 (description, bulletPoints,description,description)>
+<!ELEMENT step4 (description)>
+<!ELEMENT step5 (description)>
+<!ELEMENT step6 (description,bulletPoints,description,description,image)>
+<!ELEMENT step7 (description,bulletPoints)>
+<!ELEMENT step8 (description,alphabeticalbullets)>
+<!ELEMENT step9 (description,description,table)>
+<!ELEMENT table (caption,table_heading,table_row+)>
+<!ELEMENT table_heading (th,th)>
+<!ELEMENT table_row (td,td)>
+<!ELEMENT bulletPoints (bullet+)>
+<!ELEMENT alphabeticalbullets (bullet_alphabetic+)>
+
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT subheader (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT bullet (#PCDATA)>
+<!ELEMENT bullet_alphabetic (#PCDATA)>
+<!ELEMENT caption (#PCDATA)>
+<!ELEMENT th (#PCDATA)>
+<!ELEMENT td (#PCDATA)>
+<!ELEMENT image EMPTY>
+
+<!ATTLIST description hasUrl (true|false) "true">
+<!ATTLIST description urlVal CDATA #IMPLIED>
+<!ATTLIST subheader bold (true|false) "true">
+<!ATTLIST th bold (true|false) "true">
+<!ATTLIST td bold (true|false) "true">
+<!ATTLIST bulletPoints showBulletPoints (true|false) "true">
+<!ATTLIST bulletPoints bulletPointsOccurrence CDATA "0">
+<!ATTLIST alphabeticalbullets showBulletPoints (true|false) "true">
+<!ATTLIST alphabeticalbullets bulletPointsOccurrence CDATA "0">
+<!ATTLIST description italic (true|false) "true">
+<!ATTLIST image src CDATA #REQUIRED>
+
+]>
+
+
+<assignementInformation>
+    <title>Assignment 2 Information</title>
+    <subheader bold="true">Assignment 2 XML Schema Design Exercise</subheader>
+    <instructions>
+        <step1>
+            <description hasUrl="true" urlVal="https://www.w3schools.com/xml/xml_dtd_intro.asp">
+                1. Start by reviewing all 7 sections of this DTD tutorial: https://www.w3schools.com/xml/xml_dtd_intro.asp     
+            </description>
+        </step1>
+        <step2>
+            <description>
+                2. Choose a document or piece of text that you’re interested in from your workplace. This document can be 
+                structured or unstructured. You may choose a text of any sort and any length, as long as it is long enough 
+                to meet the following encoding criteria. Be sure to include the text as a separate file in your upload (or 
+                if it is online, you may provide a link to it) [10 points].    
+            </description>
+        </step2>
+        <step3>
+            <description>3. [20 points] Make an XML DTD for that text. Your DTD should specify the following:</description>
+            <bulletPoints bulletPointsOccurrence="1" showBulletPoints="true">
+                <bullet>At least 10 different elements</bullet>
+                <bullet>At least 5 different attributes (you may have multiple attributes per element; not every element requires attributes).  For at least 2 attributes, a controlled list of values the attribute may take.</bullet>
+                <bullet>Indicate, of course, whether each element and attribute is required, optional, an either/or, repeated, etc.</bullet>
+                <bullet>Indicate how elements may nest.</bullet>
+            </bulletPoints>
+            <description>Your goal is to write a schema that best represents the document, and in particular its important or essential components and aspects, for your purposes.</description>
+            <description>Do not use a DTD generator to generate drafts of your DTDs. The spirit of this exercise is to challenge you to consider your options of attributes, constraints, and default values and justify your decisions. DTD generators tend to generate attributes, constraints, and default values that do not accurately reflect the possibilities and requirements for your XML documents. You will lose points if we see useless attributes, inaccurate constraints, or unjustified default values in your DTD.</description>
+        </step3>
+        <step4>
+            <description>4. [10 points] Write prose documentation for each element, attribute, and attribute value. </description>
+        </step4>
+        <step5>
+            <description>5. [10 points] Mark up the text you have chosen according to the DTD you designed. Make sure you include either a DOCTYPE reference to an external DTD file, or an internal DTD within the DOCTYPE element in the XML document. Be sure to validate your document (see below) as validation is one of the areas you will be assessed on. Be sure to validate your document (see below) as validation is one of the areas you will be assessed on.</description>
+        </step5>
+        <step6>
+            <description>6. [25 points] Write a narrative about this process, answering the following reflection questions:</description>
+            <bulletPoints bulletPointsOccurrence="2" showBulletPoints="true">
+                <bullet>How did you decide to represent the data in the way that you did? Why did you choose the elements and attributes that you did?</bullet>
+                <bullet>What were the hardest decisions you had to make in this design process?</bullet>
+                <bullet>How does your DTD design support data independence?</bullet>
+                <bullet>How may your DTD design support the overarching goals of data curation (revisit objectives and activities of Week 1)?</bullet>
+                <bullet>What are the pros and cons of your DTD design?</bullet>
+            </bulletPoints>
+            <description hasUrl="true" urlVal="http://xmlvalidator.new-studio.org/">
+                You can test whether your document will validate against your DTD here: http://xmlvalidator.new-studio.org/ 
+            </description>
+            <description italic="true">
+                Please note that you must select “DTD” as your validation type. This validation tool requires an internal DTD, which means you must paste your DTD into your XML document, below the XML declaration and above the root element of your XML document. For example: 
+            </description>
+            <image src="/images/DTD.png" />
+        </step6>
+        <step7>
+            <description>7.	Submit your documents to Assignment 2 Peer Review for peer grading. Your assignment should include</description>
+            <bulletPoints bulletPointsOccurrence="3" showBulletPoints="true">
+                <bullet>3 documents if you used an internal DTD: a copy of the original text, without markup; your marked-up text (an XML file) with internal DTD; and your prose documentation along with your narrative in a separate document; OR</bullet>
+                <bullet>4 documents if you used an external DTD: a copy of the original text, without markup; your marked-up text; an external DTD document; and your prose documentation along with your narrative in a separate document.</bullet>
+            </bulletPoints>
+        </step7>
+        <step8>
+            <description>8.	Each student will be required to grade the submissions of 5 of their peers. Submissions will be graded based on the following criteria. Write a constructive and professional review and post to the course forum replying to the individual’s submission.</description>
+            <alphabeticalbullets bulletPointsOccurrence="4" showBulletPoints="true">
+                <bullet_alphabetic>Is everything represented?</bullet_alphabetic>
+                <bullet_alphabetic>Is it clearly written? Is the scheme and data clearly presented?</bullet_alphabetic>
+                <bullet_alphabetic>What are the pros and cons of this representation?</bullet_alphabetic>
+                <bullet_alphabetic>How could it be done differently? How could it be improved?</bullet_alphabetic>
+            </alphabeticalbullets>
+        </step8>
+        <step9>
+            <description>9.	Revise and submit all documents to Assignment 2 Submission for instructor grading.</description>
+            <description>If you have questions about the assignment, use the course Forum. This is a great place to ask questions and also help your fellow classmates.</description>
+            <table>
+                <caption>Instructor Grading Rubric</caption>
+                <table_heading>
+                    <th bold="true">Criteria</th>
+                    <th bold="true">Max points</th>
+                </table_heading>
+                <table_row>
+                    <td>Evidence of in-depth examination of text document (steps 2 and 4)</td>
+                    <td bold="true">20 points</td>
+                </table_row>
+                <table_row>
+                    <td>Evidence of understanding data representation, schemas and independence (steps 3 and 5)</td>
+                    <td bold="true">30 points</td>
+                </table_row>
+                <table_row>
+                    <td>Discussion of curation activities, needs, and decisions (step 6)</td>
+                    <td bold="true">25 points</td>
+                </table_row>
+                <table_row>
+                    <td>Overall quality analysis and completeness (missing parts?)</td>
+                    <td bold="true">25 points</td>
+                </table_row>
+                <table_row>
+                    <td bold="true">Total</td>
+                    <td bold="true"></td>
+                </table_row>
+            </table>
+        </step9>
+    </instructions>
+</assignementInformation>
